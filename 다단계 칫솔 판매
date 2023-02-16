@@ -1,0 +1,27 @@
+def solution(enroll, referral, sellers, amount):
+    n = len(enroll)
+    answer = dict.fromkeys(enroll, 0)
+    i = 0
+    res = dict(zip(enroll, referral))
+    for seller in sellers:
+        profit = amount[i] * 100
+        person = seller
+        while True:
+            refer = res[person]
+            if refer == '-':
+                profit10 = profit // 10
+                profit -= profit10
+                answer[person] += profit
+                break
+            else:
+                if profit < 10:
+                    answer[person] += profit
+                    break
+                else:
+                    profit10 = profit // 10
+                    profit -= profit10
+                    answer[person] += profit
+                    person = refer
+                    profit = profit10
+        i += 1
+    return list(answer.values())
