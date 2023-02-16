@@ -1,0 +1,13 @@
+def solution(A,B):
+    answer = 0
+
+    A = sorted(A)
+    B = sorted(B)
+    
+    while len(A) > 0:
+        if A[0] < B[0]:
+            answer += A.pop(0) * B.pop()
+        else:
+            answer += B.pop(0) * A.pop()
+    
+    return answer
