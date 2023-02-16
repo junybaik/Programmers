@@ -1,0 +1,11 @@
+def solution(citations):
+    answer = 0
+    citations.sort(reverse = True)
+    
+    for cite in citations:
+        check = answer + 1
+        if check > cite:
+            break
+        answer += 1
+    
+    return answer
