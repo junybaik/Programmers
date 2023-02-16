@@ -1,0 +1,19 @@
+from collections import deque
+
+def solution(priorities, location):
+    answer = 0
+    que = deque(priorities)
+    index = [0 for _ in range(len(priorities))]
+    index[location] = 1
+    index = deque(index)
+    
+    while (que):
+        check = que.popleft()
+        i = index.popleft()
+        if len(que) > 1 and check < max(que):
+            que.append(check)
+            index.append(i)
+        else:
+            answer += 1
+            if i == 1:
+                return answer
