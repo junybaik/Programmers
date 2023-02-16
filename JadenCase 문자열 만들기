@@ -1,0 +1,14 @@
+def solution(s):
+    slist = s.split(' ')
+    answer = ''
+    index = 0
+    
+    for item in slist:
+        item = item.lower()
+        item = item.capitalize()
+        if index == len(slist) - 1:
+            answer += item
+        else:
+            answer += item + ' '
+        index += 1
+    return answer
