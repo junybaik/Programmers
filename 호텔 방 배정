@@ -1,0 +1,17 @@
+def solution(k, room_number):
+    answer = []
+    room = {}
+    for i in room_number:
+        tempList = list()
+        while True:
+            if i not in room:
+                room[i] = i+1
+                answer.append(i)
+                if len(tempList) > 0:
+                    for j in tempList:
+                        room[j] = room[i]
+                break
+            else:
+                tempList.append(i)
+                i = room[i]
+    return answer
