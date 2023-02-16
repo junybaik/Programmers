@@ -1,0 +1,10 @@
+import heapq
+
+def solution(n, works):
+    heap = [-w for w in works]
+    heapq.heapify(heap)
+    while n > 0 and heap and heap[0] < 0:
+        reduced = heapq.heappop(heap)
+        heapq.heappush(heap, reduced + 1)
+        n -= 1
+    return sum([w**2 for w in [-w for w in heap]])
