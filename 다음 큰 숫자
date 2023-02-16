@@ -1,0 +1,13 @@
+def solution(n):
+    answer = 0
+    num = n
+    binaryNum = str(bin(num))
+    countNum = binaryNum.count('1')
+    
+    while True:
+        n += 1
+        binaryN = str(bin(n))
+        count = binaryN.count('1')
+        if countNum == count:
+            break
+    return n
