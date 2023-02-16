@@ -1,0 +1,15 @@
+def solution(s):
+    temp = s.split()
+    
+    for x in temp:
+        if temp.index(x) == 0:
+            low = int(x)
+            high = int(x)
+        
+        x = int(x)
+        if x > high:
+            high = x
+        if x < low:
+            low = x
+    
+    return str(low) + ' ' + str(high)
