@@ -1,0 +1,14 @@
+def solution(s):
+    result = []
+    zero = 0
+    count = 0
+    while True:
+        zeros = s.count('0')
+        temp = s.count('1')
+        zero += zeros
+        s = str(bin(temp))
+        s = s[2:]
+        count += 1
+        if len(s) == 1:
+            break
+    return [count, zero]
