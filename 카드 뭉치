@@ -1,0 +1,15 @@
+def solution(cards1, cards2, goal):
+    for current in goal:
+        test1 = False
+        test2 = False
+        if len(cards1) != 0:
+            if cards1[0] == current:
+                cards1.pop(0)
+                test1 = True
+        if len(cards2) != 0:
+            if cards2[0] == current:
+                cards2.pop(0)
+                test2 = True
+        if test1 == False and test2 == False:
+            return "No"
+    return "Yes"
