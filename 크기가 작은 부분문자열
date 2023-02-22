@@ -1,0 +1,9 @@
+def solution(t, p):
+    compare = []
+    count = 0
+    for i in range(len(t)-len(p)+1):
+        compare.append(t[i:i+len(p)])
+    for num in compare:
+        if int(p) >= int(num):
+            count += 1
+    return count
